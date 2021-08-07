@@ -61,6 +61,7 @@ task Driver::drive_reset(Packet pkt);
 endtask						 
 
 task Driver::drive_stimulus(Packet pkt);
+  $display("[DRIVER STIMULUS] Driving stimulus at time  = %0t",$time());
   write(pkt);
   read(pkt);
 endtask
@@ -93,7 +94,7 @@ task Driver::read(Packet pkt)
 endtask
 
 function void Driver::report(input string str = "Driver");
-  $display("[%s] Report : Total packets received = %0d",str,no_of_pkts_rcvd);
+  $display("[%0s] Report : Total packets received = %0d",str,no_of_pkts_rcvd);
 endfunction
 
  

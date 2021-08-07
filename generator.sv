@@ -45,7 +45,7 @@ class Generator;
   endtask
 	
   function void report(input string str = "Generator");
-	$display("[%s] Report : Total packets generated = %0d",str,no_of_pkts);
+	$display("[%0s] Report : Total packets generated = %0d",str,no_of_pkts);
   endfunction
   
   
