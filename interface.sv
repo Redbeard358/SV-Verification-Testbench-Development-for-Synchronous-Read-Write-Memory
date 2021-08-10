@@ -14,7 +14,7 @@ interface memory_if(input clk); // This is a physical interface
   logic [DATA_WIDTH-1:0] rdata;
   
   clocking cb @(posedge clk)
-   // all directions are wrt to testbench
+   // All directions are wrt to testbench
    output wr;
    output rd;
    output addr;
@@ -22,16 +22,16 @@ interface memory_if(input clk); // This is a physical interface
    input rdata;
   endclocking
   
-  clocking cb_mon_in @(posedge clk)
-   // all directions are wrt to testbench
+  clocking cb_mon_in @(posedge clk)  // For input monitor
+   // All directions are wrt to testbench
    input wr;
    input rd;
    input addr;
    input wdata;   
   endclocking
   
-  clocking cb_mon_out @(posedge clk)
-   // all directions are wrt to testbench
+  clocking cb_mon_out @(posedge clk) // For output monitor
+   // All directions are wrt to testbench
    input wr;
    input rd;
    input addr;

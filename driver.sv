@@ -70,7 +70,7 @@ task Driver::write(Packet pkt)
   @(vif.cb)
     $display("Driver_Write] Write operation has started with addr = %0d, and data = %0d, at time = %0t", 
 	                                                               pkt.addr,      pkt.data,       $time());
-    vif.cb.wr <= 1'b1; 
+    vif.cb.wr   <= 1'b1; 
 	vif.cb.addr <= pkt.addr;
 	vif.cb.data <= pkt.data;
 	
@@ -84,7 +84,7 @@ task Driver::read(Packet pkt)
   @(vif.cb)
     $display("Driver_Read] Read operation has started with addr = %0d, at time = %0t", 
 	                                                            pkt.addr,       $time());
-    vif.cb.rd <= 1'b1; 
+    vif.cb.rd   <= 1'b1; 
 	vif.cb.addr <= pkt.addr;	
 	
 	@(vif.cb)
